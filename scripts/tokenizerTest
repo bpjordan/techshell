@@ -1,0 +1,21 @@
+Script started on 2022-02-11 01:59:45-06:00 [TERM="screen" TTY="/dev/pts/1" COLUMNS="105" LINES="54"]
+[1m[3m%[23m[1m[0m                                                                                                         k../finalProject\[0m[23m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[41C[32m✓[39m  1:59AM[50D[?1h=[?2004h[32m.[39m[32m.[39m/techshell[10D[4m[32m.[4m[32m/[24m[39m[39m[4m.[39m[4m/[4mt[24m[4mt[4me[24m[4me[4mc[24m[4mc[4mh[24m[4mh[4ms[24m[4ms[4mh[24m[4mh[4me[24m[4me[4ml[24m[10D[24m[32m.[24m[32m/[24m[32mt[24m[32me[24m[32mc[24m[32mh[24m[32ms[24m[32mh[24m[32me[24m[32ml[32ml[39m[?1l>[?2004l
+k./techshell\waa>hello
+tokenizer found "hello"
+Attempting to run ["hello",]
+[1m[3m%[23m[1m[0m                                                                                                         k../finalProject\[0m[23m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[41C[32m✓[39m  1:59AM[50D[?1h=[?2004h[32m./techshell[39m[?1l>[?2004l
+k./techshell\waa>hello world
+tokenizer found "hello"
+tokenizer found "world"
+Attempting to run ["hello","world",]
+[1m[3m%[23m[1m[0m                                                                                                         k../finalProject\[0m[23m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[41C[32m✓[39m  1:59AM[50D[?1h=[?2004h[32m./techshell[39m[?1l>[?2004l
+k./techshell\waa>hello "world      world "This is a string"
+tokenizer found "hello"
+tokenizer found "world"
+tokenizer found "This is a string"
+Attempting to run ["hello","world","This is a string",]
+[1m[3m%[23m[1m[0m                                                                                                         k../finalProject\[0m[23m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[41C[32m✓[39m  2:00AM[50D[?1h=[?2004h[32ml[39m[32ml[39ms[32ml[32ms[39m[?1l>[?2004l
+kls\[0m[01;32m'=tokenizerTest.tm'[0m   [01;32mMakefile[0m   [34;42mscripts[0m   [01;32mtechshell[0m   [01;32mtechshell.c[0m   [01;32mtokenizer.c[0m
+[1m[3m%[23m[1m[0m                                                                                                         k../finalProject\[0m[23m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[41C[32m✓[39m  2:00AM[50D[?1h=[?2004h[?2004l
+
+Script done on 2022-02-11 02:00:24-06:00 [COMMAND_EXIT_CODE="0"]
