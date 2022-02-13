@@ -1,2 +1,4 @@
 techshell
 *.o
+testfiles/
+*.swp
