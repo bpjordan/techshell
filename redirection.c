@@ -2,31 +2,31 @@
 
 //Private functions which are
 //internal to parseRedirection
-int redirectIn(char *);
-int redirectOut(char *);
-int redirectErr(char *);
+int redirectIn(char *, int *);
+int redirectOut(char *, int *);
+int redirectErr(char *, int *);
 
-char **parseRedirection(char ** command)
+int *parseRedirection(char ** command)
 {
 /* Detects and handles redirection and then passes back list of arguments with
  * redirection commands removed. Returns NULL if redirection was attempted and failed.
  */
 
+    int *fds = calloc(3,sizeof(int));
+
     int curr = 0, status = 0;
-    char ** notRedirects = malloc(sizeof(char **) * curr + 1);
 
     for(char **p = command; *p != NULL; p++)
     {
         if(strcmp(*p, ">") == 0)
-            status = redirectOut(*(++p));
+            status = redirectOut(*(++p), fds);
         else if (strcmp(*p, "<") == 0)
-            status = redirectIn(*(++p));
+            status = redirectIn(*(++p), fds);
         else if(strcmp(*p, "2>") == 0)
-            status = redirectErr(*(++p));
+            status = redirectErr(*(++p), fds);
         else
         {
-            notRedirects[curr++] = *p;
-            realloc(notRedirects, sizeof(char **) * curr + 1);
+            command[curr++] = *p;
             continue;
         }
 
@@ -37,13 +37,13 @@ char **parseRedirection(char ** command)
         }
     }
 
-    notRedirects[curr] = NULL;
+    command[curr] = NULL;
 
-    return notRedirects;
+    return fds;
 
 }
 
-int redirectIn(char *filename)
+int redirectIn(char *filename, int *fdlist)
 {
     FILE * redirectFile = fopen(filename, "r");
 
@@ -52,14 +52,13 @@ int redirectIn(char *filename)
 
 #ifdef DEBUG
     printf("redirecting stdin to %s\n", filename);
-#else
-    dup2(fileno(redirectFile), 0);
 #endif
+    fdlist[0] = fileno(redirectFile);
 
     return 0;
 }
 
-int redirectOut(char *filename)
+int redirectOut(char *filename, int *fdlist)
 {
     FILE * redirectFile = fopen(filename, "w");
 
@@ -68,14 +67,13 @@ int redirectOut(char *filename)
 
 #ifdef DEBUG
     printf("redirecting stdout to %s\n", filename);
-#else
-    dup2(fileno(redirectFile), 1);
 #endif
+    fdlist[1] = fileno(redirectFile);
 
     return 0;
 }
 
-int redirectErr(char *filename)
+int redirectErr(char *filename, int *fdlist)
 {
     FILE * redirectFile = fopen(filename, "w");
 
@@ -84,9 +82,8 @@ int redirectErr(char *filename)
 
 #ifdef DEBUG
     printf("redirecting stderr to %s\n", filename);
-#else
-    dup2(fileno(redirectFile), 2);
 #endif
+    fdlist[2] = fileno(redirectFile);
 
     return 0;
 }

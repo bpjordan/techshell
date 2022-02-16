@@ -7,6 +7,6 @@
 #include <unistd.h>
 #include <errno.h>
 
-char **parseRedirection(char **);
+int *parseRedirection(char **);
 
 #endif

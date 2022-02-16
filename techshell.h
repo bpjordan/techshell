@@ -13,6 +13,7 @@
 #include "redirection.h"
 
 #define MAX_INPUT 256
+#define CWD_BUFF 64
 
 void prompt();
 
