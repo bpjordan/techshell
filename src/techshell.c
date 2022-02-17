@@ -4,9 +4,17 @@ int main(int argc, char **argv)
 {
 
     int exitstatus = 0;
+
+    char* pwd = malloc(sizeof(char*) * CWD_BUFF);
     while(1)
     {
-        char* pwd = getenv("PWD");
+
+        if(getcwd(pwd, CWD_BUFF) == NULL)
+        {
+            perror("FATAL: Failed to get cwd");
+            exit(1);
+        }
+
         printf("%s $ ", pwd);
 
 /* Get user input and tokeize it */
@@ -47,8 +55,11 @@ int main(int argc, char **argv)
         if(!strcmp(command[0], "cd"))
         {
             char* dir = (command[1] == NULL) ? getenv("HOME") : command[1];
-            if(chdir(command[1]) == -1)
-                fprintf(stderr, "Couldn't chdir to %s: %s\n", command[1], strerror(errno));
+#ifdef DEBUG
+            printf("Chdir to %s\n", dir);
+#endif
+            if(chdir(dir) == -1)
+                fprintf(stderr, "Couldn't chdir to %s: %s\n", dir, strerror(errno));
 
             continue;
         }
