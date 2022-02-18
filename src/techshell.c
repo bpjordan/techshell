@@ -77,9 +77,11 @@ int main(int argc, char **argv)
             {
                 if(streams[i])
                     dup2(streams[i], i);
-
-                execvp(command[0], command);
             }
+
+            if(execvp(command[0], command) == -1)
+                fprintf(stderr, "Unable to execute %s: %s\n", command[0], strerror(errno));
+            exit(1);
         }
         else            //Parent
         {
@@ -87,6 +89,16 @@ int main(int argc, char **argv)
             waitpid(childpid, &status, 0);
 
             exitstatus = WEXITSTATUS(status);
+
+            for(int i = 0; i<3; i++)
+                if(streams[i]) close(streams[i]);
+
+            free(streams);
+
+//            for(int i = 0; command[i] != NULL; i++)
+//                free(command[i]);
+
+            free(command);
         }
 
 
