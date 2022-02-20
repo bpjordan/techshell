@@ -11,6 +11,7 @@
 
 #include "tokenizer.h"
 #include "redirection.h"
+#include "builtins.h"
 
 #define MAX_INPUT 256
 #define CWD_BUFF 256

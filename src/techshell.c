@@ -32,7 +32,7 @@ int main(int argc, char **argv)
         if(*command == NULL)
             continue;
 
-        if(!strcmp(command[0], "exit") || feof(stdin))
+        if(!strcmp(command[0], "exit"))
             exit(exitstatus);
 
 /* Parse out redirection commands */
@@ -49,8 +49,6 @@ int main(int argc, char **argv)
         if(streams == NULL)
             continue;
 
-/* Do the thing */
-
 #ifdef DEBUG
         printf("Arguments: [");
         for(int i=0; command[i] != NULL; i++)
@@ -58,23 +56,29 @@ int main(int argc, char **argv)
         printf("]\n");
 #endif
 
+/* Do the thing */
+
         pid_t childpid;
 
+        //Before forking, check if we're running one of the builtins
         if(!strcmp(command[0], "cd"))
         {
-            char* dir = (command[1] == NULL) ? getenv("HOME") : command[1];
-#ifdef DEBUG
-            printf("Chdir to %s\n", dir);
-#endif
-            if(chdir(dir) == -1)
-                dprintf(streams[2] == 0 ? fileno(stderr) : streams[2], "Couldn't chdir to %s: %s\n", dir, strerror(errno));
+            char* dir = (command[1] == NULL) ? getenv("HOME") : command[1];         //Default to home if no dir is given
+            exitstatus = cd(dir, streams);
         }
 
         else if (!strcmp(command[0], "pwd"))
-            dprintf(streams[1] == 0 ? fileno(stdout) : streams[1], "%s\n", pwd);
+        {
+            exitstatus = putpwd(pwd, streams);
+        }
 
         else if(!(childpid = fork()))   //Child
         {
+#ifdef DEBUG
+            printf("Child process succesfully created with PID %d\n", getpid());
+#endif
+
+            //Redirect to/from any files found in redirection step
             for(int i = 0; i<3; i++)
             {
                 if(streams[i])
@@ -85,12 +89,18 @@ int main(int argc, char **argv)
                 fprintf(stderr, "Unable to execute %s: %s\n", command[0], strerror(errno));
             exit(1);
         }
+        else if(childpid == -1)
+            perror("Failed to create child process");
         else            //Parent
         {
             int status = 0;
             waitpid(childpid, &status, 0);
 
             exitstatus = WEXITSTATUS(status);
+
+#ifdef DEBUG
+            printf("Child process exited with status %d\n", exitstatus);
+#endif
 
         }
 

@@ -15,8 +15,11 @@ all:$(BIN)
 $(BIN):$(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $@ $(LIB)
 
-$(OBJD)/%.o:$(SRCD)/%.c $(SRCD)/%.h
+$(OBJD)/%.o:$(SRCD)/%.c $(SRCD)/%.h | $(OBJD)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJD):
+	mkdir $@
 
 prod:CFLAGS+=$(PROD)
 prod:clean all

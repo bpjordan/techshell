@@ -23,4 +23,15 @@ Implementation Details
 
 ### I/O redirection
 
-Before 
+Before a command is executed, arguments are tokenized and scanned for redirection operators (`<`, `>`, and `2>`). The argument
+after each operator is passed to fopen. If fopen is successful, the tokens for the redirection operator and filename are removed
+from the list of tokens, and the file descriptor of the opened file is saved for later use.
+
+Once a new process is forked, all saved file descriptors are duplicated to their respective streams before exec() is called. This
+way, only the forked process is affected by the redirection
+
+### Builtin commands
+
+- `ls` runs chdir on the current process rather than forking a new process
+- `pwd` prints out the present working directory (which is already saved in a variable) without forking a new process
+- `exit` simply exits the program, returning the exit value of the last process, according to convention.
