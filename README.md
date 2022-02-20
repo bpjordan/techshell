@@ -34,4 +34,4 @@ way, only the forked process is affected by the redirection
 
 - `ls` runs chdir on the current process rather than forking a new process
 - `pwd` prints out the present working directory (which is already saved in a variable) without forking a new process
-- `exit` simply exits the program, returning the exit value of the last process, according to convention.
+- `exit` exits the program, returning the exit value of the last process, according to convention.
