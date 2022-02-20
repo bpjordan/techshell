@@ -87,3 +87,11 @@ int redirectErr(char *filename, int *fdlist)
 
     return 0;
 }
+
+void cleanupRedirection(int* filenos)
+{
+    for(int i = 0; i<3; i++)
+        if(filenos[i]) close(filenos[i]);
+
+    free(filenos);
+}

@@ -58,6 +58,8 @@ int main(int argc, char **argv)
         printf("]\n");
 #endif
 
+        pid_t childpid;
+
         if(!strcmp(command[0], "cd"))
         {
             char* dir = (command[1] == NULL) ? getenv("HOME") : command[1];
@@ -65,19 +67,13 @@ int main(int argc, char **argv)
             printf("Chdir to %s\n", dir);
 #endif
             if(chdir(dir) == -1)
-                fprintf(stderr, "Couldn't chdir to %s: %s\n", dir, strerror(errno));
-
-            continue;
+                dprintf(streams[2] == 0 ? fileno(stderr) : streams[2], "Couldn't chdir to %s: %s\n", dir, strerror(errno));
         }
+
         else if (!strcmp(command[0], "pwd"))
-        {
-            printf("%s\n", pwd);
-            continue;
-        }
+            dprintf(streams[1] == 0 ? fileno(stdout) : streams[1], "%s\n", pwd);
 
-        pid_t childpid = fork();
-
-        if(!childpid)   //Child
+        else if(!(childpid = fork()))   //Child
         {
             for(int i = 0; i<3; i++)
             {
@@ -96,17 +92,10 @@ int main(int argc, char **argv)
 
             exitstatus = WEXITSTATUS(status);
 
-            for(int i = 0; i<3; i++)
-                if(streams[i]) close(streams[i]);
-
-            free(streams);
-
-//            for(int i = 0; command[i] != NULL; i++)
-//                free(command[i]);
-
-            free(command);
         }
 
+        cleanupRedirection(streams);
 
+        free(command);
     }
 }

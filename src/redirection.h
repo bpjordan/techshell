@@ -8,5 +8,6 @@
 #include <errno.h>
 
 int *parseRedirection(char **);
+void cleanupRedirection(int* filenos);
 
 #endif
