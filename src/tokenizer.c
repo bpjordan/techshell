@@ -14,11 +14,21 @@ char** tokenize(char * str)
 
     while(token != NULL)
     {
+#ifdef DEBUG
+        printf("Tokenizer found \"%s\"\n", token);
+#endif
         //put this token into the list and add a new token
         tokens[currTok] = token;
         depth += strlen(token) + 1;
 
-        realloc(tokens, sizeof(char*) * (++currTok + 1));
+        tokens = realloc(tokens, sizeof(char*) * (++currTok + 1));
+
+        if(tokens == NULL)
+        {
+            perror("Tokenizer unable to allocate memory");
+            return NULL;
+        }
+
         tokens[currTok] = NULL;
 
         //Get the next word or complete string from input
@@ -27,12 +37,6 @@ char** tokenize(char * str)
         else
             token = strtok(NULL, " \n");
 
-#ifdef DEBUG
-        printf("[");
-        for(char ** listTokens = tokens; *listTokens != NULL; listTokens++)
-            printf("\"%s\",", *listTokens);
-        printf("]\n");
-#endif
     }
 
     free(token);

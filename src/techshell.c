@@ -6,7 +6,7 @@ int main(int argc, char **argv)
     int exitstatus = 0;
 
     char* pwd = malloc(sizeof(char*) * CWD_BUFF);
-    while(1)
+    while(!feof(stdin))
     {
 
         if(getcwd(pwd, CWD_BUFF) == NULL)
@@ -20,7 +20,13 @@ int main(int argc, char **argv)
 /* Get user input and tokeize it */
 
         char input[MAX_INPUT];
-        fgets(input, MAX_INPUT, stdin);
+        errno = 0;
+        if(fgets(input, MAX_INPUT, stdin) == NULL)
+        {
+            if(errno == 0) exit(exitstatus);
+            perror("Failed to read user input");
+            continue;
+        }
         char** command = tokenize(input);
 
         if(*command == NULL)

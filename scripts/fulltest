@@ -1,0 +1,71 @@
+Script started on 2022-02-19 20:16:35-06:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="99" LINES="45"]
+[?25l[?7l[0m[31m[1m            .-/+oossssoo+/-.
+        `:+ssssssssssssssssss+:`
+      -+ssssssssssssssssssyyssss+-
+    .ossssssssssssssssss[37m[0m[1mdMMMNy[0m[31m[1msssso.
+   /sssssssssss[37m[0m[1mhdmmNNmmyNMMMMh[0m[31m[1mssssss/
+  +sssssssss[37m[0m[1mhm[0m[31m[1myd[37m[0m[1mMMMMMMMNddddy[0m[31m[1mssssssss+
+ /ssssssss[37m[0m[1mhNMMM[0m[31m[1myh[37m[0m[1mhyyyyhmNMMMNh[0m[31m[1mssssssss/
+.ssssssss[37m[0m[1mdMMMNh[0m[31m[1mssssssssss[37m[0m[1mhNMMMd[0m[31m[1mssssssss.
++ssss[37m[0m[1mhhhyNMMNy[0m[31m[1mssssssssssss[37m[0m[1myNMMMy[0m[31m[1msssssss+
+oss[37m[0m[1myNMMMNyMMh[0m[31m[1mssssssssssssss[37m[0m[1mhmmmh[0m[31m[1mssssssso
+oss[37m[0m[1myNMMMNyMMh[0m[31m[1msssssssssssssshmmmh[0m[31m[1mssssssso
++ssss[37m[0m[1mhhhyNMMNy[0m[31m[1mssssssssssss[37m[0m[1myNMMMy[0m[31m[1msssssss+
+.ssssssss[37m[0m[1mdMMMNh[0m[31m[1mssssssssss[37m[0m[1mhNMMMd[0m[31m[1mssssssss.
+ /ssssssss[37m[0m[1mhNMMM[0m[31m[1myh[37m[0m[1mhyyyyhdNMMMNh[0m[31m[1mssssssss/
+  +sssssssss[37m[0m[1mdm[0m[31m[1myd[37m[0m[1mMMMMMMMMddddy[0m[31m[1mssssssss+
+   /sssssssssss[37m[0m[1mhdmNNNNmyNMMMMh[0m[31m[1mssssss/
+    .ossssssssssssssssss[37m[0m[1mdMMMNy[0m[31m[1msssso.
+      -+sssssssssssssssss[37m[0m[1myyy[0m[31m[1mssss+-
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.[0m
+[20A[9999999D[43C[0m[1m[31m[1mbjordan[0m@[31m[1mBronson-Laptop[0m 
+[43C[0m----------------------[0m 
+[43C[0m[31m[1mOS[0m[0m:[0m Ubuntu 20.04.3 LTS on Windows 10 x86_64[0m 
+[43C[0m[31m[1mKernel[0m[0m:[0m 5.10.16.3-microsoft-standard-WSL2[0m 
+[43C[0m[31m[1mUptime[0m[0m:[0m 24 mins[0m 
+[43C[0m[31m[1mShell[0m[0m:[0m zsh 5.8[0m 
+[43C[0m[31m[1mTerminal[0m[0m:[0m script[0m 
+[43C[0m[31m[1mCPU[0m[0m:[0m AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx (8) @ 1.996GHz[0m 
+[43C[0m[31m[1mMemory[0m[0m:[0m 90MiB / 6056MiB[0m 
+
+[43C[30m[40m   [31m[41m   [32m[42m   [33m[43m   [34m[44m   [35m[45m   [36m[46m   [37m[47m   [m
+[43C[38;5;8m[48;5;8m   [38;5;9m[48;5;9m   [38;5;10m[48;5;10m   [38;5;11m[48;5;11m   [38;5;12m[48;5;12m   [38;5;13m[48;5;13m   [38;5;14m[48;5;14m   [38;5;15m[48;5;15m   [m
+
+
+
+
+
+
+
+
+
+[?25h[?7h[1m[7m%[27m[1m[0m                                                                                                   ]2;bjordan@Bronson-Laptop:/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject]1;../finalProject[0m[27m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[35C[32m✓[39m  8:16PM[44D[?1h=[?2004h[32ml[39m[32ml[39m[90ms[39m[32ml[32ms[39m[?1l>[?2004l
+]2;ls --color=tty]1;ls[0m[01;32mMakefile[0m  [01;32mREADME.md[0m  [34;42mobj[0m  [34;42mscripts[0m  [34;42msrc[0m  [34;42mtestfiles[0m
+[1m[7m%[27m[1m[0m                                                                                                   ]2;bjordan@Bronson-Laptop:/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject]1;../finalProject[0m[27m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[35C[32m✓[39m  8:16PM[44D[?1h=[?2004h[1m[31mm[0m[39m[1m[31mm[1m[31ma[0m[39m[0m[39mm[0m[39mak[32mm[32ma[32mk[32me[39m[90m clean[39m[39m [39m [39m [39m [39m [39m [?1l>[?2004l
+]2;make]1;makegcc -Wall -c src/techshell.c -o obj/techshell.o
+gcc -Wall -c src/redirection.c -o obj/redirection.o
+gcc -Wall -c src/tokenizer.c -o obj/tokenizer.o
+gcc -Wall  obj/techshell.o  obj/redirection.o  obj/tokenizer.o -o techshell 
+[1m[7m%[27m[1m[0m                                                                                                   ]2;bjordan@Bronson-Laptop:/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject]1;../finalProject[0m[27m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[35C[32m✓[39m  8:16PM[44D[?1h=[?2004h[32m.[39m[32m.[39m[90m/techshell[39m[10D[4m[32m.[4m[32m/[24m[39m[39m[4m.[39m[4m/[39m[4mt[24m[4mt[39m[4me[24m[4me[39m[4mc[24m[4mc[39m[4mh[24m[4mh[39m[4ms[24m[4ms[39m[4mh[24m[4mh[39m[4me[24m[4me[39m[4ml[24m[10D[24m[32m.[24m[32m/[24m[32mt[24m[32me[24m[32mc[24m[32mh[24m[32ms[24m[32mh[24m[32me[24m[32ml[32ml[39m[?1l>[?2004l
+]2;./techshell]1;./techshell/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject $ ls
+Makefile  README.md  obj  scripts  src	techshell  testfiles
+/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject $ cd testfiles
+/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject/testfiles $ ls
+words
+/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject/testfiles $ wc < words
+ 7  7 29
+/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject/testfiles $ cd ..
+/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject $ ls > testfiles/lstest
+/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject $ cat testfiles/lstest
+Makefile
+README.md
+obj
+scripts
+src
+techshell
+testfiles
+/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject $ exit
+[1m[7m%[27m[1m[0m                                                                                                   ]2;bjordan@Bronson-Laptop:/mnt/c/users/brain/Documents/LA Tech Sophomore/W22/CSC222/sandbox/finalProject]1;../finalProject[0m[27m[24m[J[35mbjordan@Ubuntu[WSL][39m:[31mW22/CSC222/sandbox/finalProject [1m[31m[36m% [0m[36m[39m[K[35C[32m✓[39m  8:17PM[44D[?1h=[?2004h[?2004l
+
+Script done on 2022-02-19 20:17:55-06:00 [COMMAND_EXIT_CODE="0"]
